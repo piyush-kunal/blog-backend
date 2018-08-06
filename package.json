@@ -1,0 +1,24 @@
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.15.4",
+    "mongoskin": "1.4.1",
+    "pug": "2.0.0-rc.4",
+    "stylus": "0.54.5"
+  },
+  "devDependencies": {
+    "axios": "^0.18.0",
+    "expect.js": "^0.3.1",
+    "mocha": "^4.0.1",
+    "superagent": "^3.8.0"
+  }
+}

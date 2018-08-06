@@ -1,2 +1,3 @@
-# blog-backend
-# blog-backend
+Backend Application for Blog
+
+Using NodeJs and ExpressJs
