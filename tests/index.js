@@ -4,20 +4,25 @@ const port = require('../app').port
 const superagent = require('superagent')
 const expect = require('expect.js')
 
-// Import/require statements
+// TODO: seed from the test and then clean up
+const seedArticles = require('../db/articles.json')
+// const seedUsers = require('../db/users.json')
 
 describe('server', () => {
-
   before(() => {
     boot()
   })
 
   describe('homepage', () => {
-
     it('should respond to GET', (done) => {
-      // ...
+      superagent
+        .get(`http://localhost:${port}`)
+        .end((error, res) => {
+          expect(error).to.be(null)
+          expect(res.status).to.equal(200)
+          done()
+        })
     })
-
     it('should contain posts', (done) => {
       superagent
         .get(`http://localhost:${port}`)
@@ -30,11 +35,11 @@ describe('server', () => {
             } else {
               expect(res.text).not.to.contain(`<h2><a href="/articles/${item.slug}">${item.title}`)
             }
+            // console.log(item.title, res.text)
           })
           done()
         })
     })
-
   })
 
   describe('article page', () => {
@@ -59,9 +64,8 @@ describe('server', () => {
       })
     })
   })
-
+  
   after(() => {
     shutdown()
   })
-
 })

@@ -1,3 +1,17 @@
-Backend Application for Blog
+# Blog with articles/posts
 
-Using NodeJs and ExpressJs
+## Usage
+
+```
+npm i
+npm run seed
+make test
+npm start
+```
+
+# Todo
+
+* Markdown
+* Edit post (modal, fetch data via AJAX)
+* Photo upload
+* salt password

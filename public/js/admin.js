@@ -5,12 +5,14 @@ $.ajaxSetup({
     $('.alert').html('Status: ' + status + ', error: ' + error)
   }
 })
+
 var findTr = function (event) {
   var target = event.srcElement || event.target
   var $target = $(target)
   var $tr = $target.parents('tr')
   return $tr
 }
+
 var remove = function (event) {
   var $tr = findTr(event)
   var id = $tr.data('id')
@@ -23,6 +25,7 @@ var remove = function (event) {
     }
   })
 }
+
 var update = function (event) {
   var $tr = findTr(event)
   $tr.find('button').attr('disabled', 'disabled')
@@ -46,6 +49,7 @@ var update = function (event) {
     }
   })
 }
+
 $(document).ready(function () {
   var $element = $('.admin tbody')
   $element.on('click', 'button.remove', remove)
